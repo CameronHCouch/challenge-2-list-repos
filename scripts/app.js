@@ -64,7 +64,8 @@ function buildListItem(listItem) {
         </svg>
         `
     stars.append(starIcon);
-    stars.textContent = listItem.stargazers_count;
+    stars.innerHTML = listItem.stargazers_count + stars.innerHTML;
+    stars.className = "statLine";
     stats.append(stars);
 
     let forks = document.createElement('div');
@@ -75,7 +76,8 @@ function buildListItem(listItem) {
         </svg>
         `
     forks.append(forkIcon);
-    forks.textContent = listItem.forks_count;
+    forks.innerHTML = listItem.forks_count + forks.innerHTML;
+    forks.className = "statLine";
     stats.append(forks);
 
     htmlItem.append(stats);
