@@ -59,13 +59,13 @@ function buildListItem(listItem) {
     let stars = document.createElement('div');
     let starIcon = document.createElement('div');
     starIcon.innerHTML = `
-        <svg class="icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 14 16" width="14">
+        <svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 14 16" width="14">
             <use xlink:href="./svg/sprites.svg#star"></use>
         </svg>
         `
     stars.append(starIcon);
     stars.textContent = listItem.stargazers_count;
-    stats.appendChild(stars);
+    stats.append(stars);
 
     let forks = document.createElement('div');
     let forkIcon = document.createElement('div');
@@ -76,7 +76,7 @@ function buildListItem(listItem) {
         `
     stars.append(forkIcon);
     forks.textContent = listItem.forks_count;
-    stats.appendChild(forks);
+    stats.append(forks);
 
     htmlItem.append(stats);
 
