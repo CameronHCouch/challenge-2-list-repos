@@ -58,7 +58,7 @@ function buildListItem(listItem) {
     
     let stars = document.createElement('div');
     stars.innerHTML = `
-        <svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 14 16" width="14">
+        <svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 14 16" width="14" style="margin-left:5px;">
             <use xlink:href="./svg/sprites.svg#star"></use>
         </svg>
         `
@@ -68,7 +68,7 @@ function buildListItem(listItem) {
 
     let forks = document.createElement('div');
     forks.innerHTML = `
-        <svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 10 16" width="10">
+        <svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 10 16" width="10" style="margin-left:5px;">
             <use xlink:href="./svg/sprites.svg#fork"></use>
         </svg>
         `
