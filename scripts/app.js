@@ -57,25 +57,21 @@ function buildListItem(listItem) {
     stats.className = "stats";
     
     let stars = document.createElement('div');
-    let starIcon = document.createElement('div');
-    starIcon.innerHTML = `
+    stars.innerHTML = `
         <svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 14 16" width="14">
             <use xlink:href="./svg/sprites.svg#star"></use>
         </svg>
         `
-    stars.append(starIcon);
     stars.innerHTML = listItem.stargazers_count + stars.innerHTML;
     stars.className = "statLine";
     stats.append(stars);
 
     let forks = document.createElement('div');
-    let forkIcon = document.createElement('div');
-    forkIcon.innerHTML = `
+    forks.innerHTML = `
         <svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 10 16" width="10">
             <use xlink:href="./svg/sprites.svg#fork"></use>
         </svg>
         `
-    forks.append(forkIcon);
     forks.innerHTML = listItem.forks_count + forks.innerHTML;
     forks.className = "statLine";
     stats.append(forks);

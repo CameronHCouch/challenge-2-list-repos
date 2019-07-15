@@ -7,4 +7,5 @@
 
 .statLine {
     display: flex;
+    align-items: center;
 }
