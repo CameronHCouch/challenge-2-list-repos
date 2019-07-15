@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    console.log('document ready');
+    // console.log('document ready');
 });
 
 document.forms[0].onsubmit = function(e) {
@@ -57,46 +57,32 @@ function buildListItem(listItem) {
     stats.className = "stats";
     
     let stars = document.createElement('div');
+    let starIcon = document.createElement('div');
+    starIcon.innerHTML = `
+        <svg class="icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 14 16" width="14">
+            <use xlink:href="./svg/sprites.svg#star"></use>
+        </svg>
+        `
+    stars.append(starIcon);
     stars.textContent = listItem.stargazers_count;
     stats.appendChild(stars);
 
-    let watchers = document.createElement('div');
-    watchers.textContent = listItem.watchers_count;
-    stats.appendChild(watchers);
+    let forks = document.createElement('div');
+    let forkIcon = document.createElement('div');
+    forkIcon.innerHTML = `
+        <svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 10 16" width="10">
+            <use xlink:href="./svg/sprites.svg#fork"></use>
+        </svg>
+        `
+    stars.append(forkIcon);
+    forks.textContent = listItem.forks_count;
+    stats.appendChild(forks);
 
     htmlItem.append(stats);
-    
+
     repoList.appendChild(htmlItem);
 }
 
 function defaultSubscription() {
     return 'This repo has no description.'
 }
-
-// <div class="row repo">
-// <h3>
-//     <a href="https://github.com/code-corgi/challenge-2-list-repos">
-//         challenge-2-list-repos
-//     </a>
-// </h3>
-// <p><strong>Description:</strong>
-//     <span>Challenge 2 for the code-corgi platform</span>
-// </p>
-// <p><strong>Owner:</strong>
-//     <span>code-corgi</span>
-// </p>
-// <div class="stats">
-//     <div class="col-sm-1 stars">
-//     <svg class="icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 14 16" width="14">
-//         <use xlink:href="./svg/sprites.svg#star"></use>
-//     </svg>
-//         <span>1</span>
-//     </div>
-//     <div class="col-sm-1 forks">
-//         <svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 10 16" width="10">
-//             <use xlink:href="./svg/sprites.svg#fork"></use>
-//         </svg>
-//         <span>3</span>
-//     </div>
-// </div>
-// </div>
