@@ -74,7 +74,7 @@ function buildListItem(listItem) {
             <use xlink:href="./svg/sprites.svg#fork"></use>
         </svg>
         `
-    stars.append(forkIcon);
+    forks.append(forkIcon);
     forks.textContent = listItem.forks_count;
     stats.append(forks);
 
